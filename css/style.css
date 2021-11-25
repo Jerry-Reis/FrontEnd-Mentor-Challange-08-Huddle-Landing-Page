@@ -1,7 +1,8 @@
+/* :::::::::::::::  Import fonts  ::::::::::::::: */
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
 
-@import url('../images/facebook.svg');
-
+/* :::::::::::::::::  Variables  :::::::::::::::: */
 :root {
     --violet: hsl(257, 40%, 49%);
     --soft-magenta: hsl(300, 69%, 71%);
@@ -33,7 +34,7 @@ body {
     background-image: url('../images/bg-desktop.svg');
     background-color: var(--violet);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 .container {
     width: 95%;
@@ -130,10 +131,17 @@ footer a:nth-child(2) {
     border: 2px solid var(--soft-magenta);
 }
 
+/* ::::::::::::::::  Media queries  ::::::::::::::: */
+
 @media (max-width: 1200px) {
     header {
         margin-bottom: 4rem;
     }
+
+    header img {
+        width: min(50%, 264px);
+    }
+
     main {
         flex-direction: column;
         justify-content: center;
@@ -152,19 +160,27 @@ footer a:nth-child(2) {
         padding-bottom: 0rem;
     }
 
-    /* .register h1 {
-        font-size: 2.5rem;
-    } */
+    .register a {
+        padding: 1.5rem 10rem;
+    }
 
     body {
         height: auto;
-        padding: 60px 40px 60px 40px;
+        padding: 30px 40px 60px 40px;
 
         background-image: url('../images/bg-mobile.svg');
+        background-size: contain;
     }
 
     footer {
         justify-content: center;
+        margin: 0;
+    }
+}
+
+@media (max-width: 485px) {
+    .register h1 {
+        font-size: 2.5rem;
     }
 
     .social-media {
